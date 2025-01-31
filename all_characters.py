@@ -3,9 +3,6 @@ from bs4 import BeautifulSoup
 import json
 import time
 
-# Base URL for Fandom
-BASE_URL = "https://aceattorney.fandom.com"
-
 # Category Page with character links (excluding the first page with "*")
 CHARACTER_LIST_URL = "https://aceattorney.fandom.com/wiki/Category:Characters?from=1"
 
@@ -86,7 +83,7 @@ def get_character_links(page_url):
         character_links = []
         for link in soup.select("div.category-page__members a.category-page__member-link"):
             char_name = link.text.strip()
-            char_url = BASE_URL + link["href"]
+            char_url = page_url
             character_links.append({"name": char_name, "url": char_url})
 
         return character_links, soup
@@ -125,7 +122,7 @@ while current_page_url:
             continue  
 
         try:
-            time.sleep(1)  
+            time.sleep(1) # Waiting 1 second between each query to avoid getting timeout 
             char_response = requests.get(char["url"], headers=HEADERS)
             char_response.raise_for_status()  
             char_soup = BeautifulSoup(char_response.text, "html.parser")

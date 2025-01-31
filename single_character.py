@@ -1,10 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 import json
-import re
-
-# Base URL for Fandom
-BASE_URL = "https://aceattorney.fandom.com"
 
 # Character page URL
 CHARACTER_PAGE_URL = "https://aceattorney.fandom.com/wiki/Phoenix_Wright"
@@ -77,7 +73,7 @@ def extract_character_data(soup):
             # Extract text from div with data-source attribute
             div = soup.find("div", {"data-source": field})
             if div:
-                as_list = field in ["occupation", "french"]  # Store these as arrays
+                as_list = field in ["occupation", "french"]  # Store these as arrays   
                 text = clean_text(div.get_text(), as_list=as_list)
                 character_info[field] = text
             else:
