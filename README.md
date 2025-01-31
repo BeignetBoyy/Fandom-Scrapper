@@ -8,6 +8,14 @@ Be warned this tool was made only by myself with a fairly limited knowledge of s
 Keep in mind that this code requires a bit of knowledge to use (there is no UI and you have to edit the code in order to use it) but I still tried to make it somewhat easy to go through and change what you want.
 This tool also might not work with every fandom, some don't have *Categories:Characters* pages they may have different names. It's up to you to check that
 
+# Before using
+
+This code requires a couple libraries in order to work just run the following command to install them :
+```
+pip install requirements.txt
+```
+
+
 # How it works
 
 The code provided scraps characters from the [**Ace Attorney** Fandom](https://aceattorney.fandom.com/wiki/Category:Characters).
