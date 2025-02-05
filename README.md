@@ -12,7 +12,7 @@ This tool also might not work with every fandom, some don't have *Categories:Cha
 
 This code requires a couple libraries in order to work just run the following command to install them :
 ```
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 
